@@ -1,0 +1,97 @@
+body {
+  background-image: url("https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+}
+
+.container {
+  background: white;
+  max-width: 100%;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 15px black;
+}
+
+#top-div1,
+#top-div2,
+#bottom-div1,
+#bottom-div2 {
+  background-color: rgba(0, 128, 0, 0.719);
+  width: 100px;
+  height: 100px;
+  margin: 20px 10px;
+  cursor: pointer;
+  transition: padding 0.15s;
+  box-shadow: 0px 9px #999;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  border: 1px solid white;
+}
+
+#top-div2 {
+  background-color: #1c87c99f;
+}
+
+#bottom-div1 {
+  background-color: rgba(175, 2, 2, 0.719);
+}
+
+#bottom-div2 {
+  background-color: rgba(128, 0, 128, 0.685);
+}
+
+/* ============================================================================================== */
+/* !========================================== Hover ============================================ */
+/* 👇==========================================================================================👇 */
+#top-div1:hover,
+#top-div2:hover,
+#bottom-div1:hover,
+#bottom-div2:hover {
+  transition: background-color 0.15s;
+}
+
+#top-div1:hover {
+  background-color: rgb(7, 196, 7);
+}
+#top-div2:hover {
+  background-color: #1c87c9;
+}
+
+#bottom-div1:hover {
+  background-color: red;
+}
+#bottom-div2:hover {
+  background-color: purple;
+}
+
+/* ============================================================================================== */
+/* !====================================== Active =============================================== */
+/* 👇==========================================================================================👇 */
+
+#top-div1:active,
+#top-div2:active,
+#bottom-div1:active,
+#bottom-div2:active {
+  transform: translateY(4px);
+}
+
+#top-div1:active {
+  box-shadow: 0 5px #666, 0px 0px 50px green;
+}
+#top-div2:active {
+  box-shadow: 0 5px #666, 0px 0px 50px #1c87c9;
+}
+
+#bottom-div1:active {
+  box-shadow: 0 5px #666, 0px 0px 50px red;
+}
+#bottom-div2:active {
+  box-shadow: 0 5px #666, 0px 0px 50px purple;
+}
