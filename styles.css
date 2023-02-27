@@ -3,12 +3,55 @@ body {
   background-size: cover;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+h1 {
+  text-transform: capitalize;
+}
+
+.star-game-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/* ============================================================================================== */
+/* !====================================== Start game Btn ======================================= */
+/* 👇==========================================================================================👇 */
+#start-game-btn {
+  border: none;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  background: #4e6e81;
+  transition: box-shadow 0.15s, background-color 0.15s, color 0.15s,
+    border 0.15s;
+}
+
+#start-game-btn:hover {
+  background-color: white;
+  color: #4e6e81;
+  border: solid 1px #4e6e81;
+  box-shadow: -1px 2px 5px #4e6e81;
+  transition: box-shadow 0.15s, background-color 0.15s, color 0.15s,
+    border 0.15s;
+}
+
+#start-game-btn:active {
+  background-color: #4e6e81;
+  color: white;
+  opacity: 0.9;
 }
 
 .container {
   background: white;
-  max-width: 100%;
-  margin: auto;
+  max-width: 80%;
+  margin: 0px auto;
   border: 2px solid black;
   border-radius: 10px;
   padding: 20px;
@@ -19,11 +62,15 @@ body {
   box-shadow: 5px 5px 15px black;
 }
 
+/* ============================================================================================== */
+/* !========================================== Divs ============================================= */
+/* 👇==========================================================================================👇 */
+
 #top-div1,
 #top-div2,
 #bottom-div1,
 #bottom-div2 {
-  background-color: rgba(0, 128, 0, 0.719);
+  background-color: rgba(255, 127, 80, 0.671);
   width: 100px;
   height: 100px;
   margin: 20px 10px;
@@ -58,7 +105,7 @@ body {
 }
 
 #top-div1:hover {
-  background-color: rgb(7, 196, 7);
+  background-color: coral;
 }
 #top-div2:hover {
   background-color: #1c87c9;
@@ -83,7 +130,7 @@ body {
 }
 
 #top-div1:active {
-  box-shadow: 0 5px #666, 0px 0px 50px green;
+  box-shadow: 0 5px #666, 0px 0px 50px coral;
 }
 #top-div2:active {
   box-shadow: 0 5px #666, 0px 0px 50px #1c87c9;
