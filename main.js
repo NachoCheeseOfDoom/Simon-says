@@ -1,9 +1,3 @@
-// const coralBtn = document.getElementById('top-div1');
-// const blueBtn = document.getElementById('top-div2');
-// const redBtn = document.getElementById('bottom-div1');
-// const purpleBtn = document.getElementById('bottom-div2');
-
-
 const startGameBtn = document.getElementById('start-game-btn')
 const round = document.getElementById('rounds-el');
 const simonsBtns = document.getElementsByClassName('circle');
@@ -22,12 +16,12 @@ class Simon {
       round
     }
     this.wonGameSound = new Audio('./sounds/conrats-clapping.mp3');
-    this.errorSound = new Audio('./sounds/scary-game-over.mp3');
+    this.errorSound = new Audio('./sounds/game-over-trumpit.mp3');
     this.buttonSounds = [
-      new Audio('./sounds/Piano A.mp3'),
-      new Audio('./sounds/Piano G.mp3'),
-      new Audio('./sounds/Piano D.mp3'),
-      new Audio('./sounds/Piano F.mp3')
+      new Audio('./sounds/Piano A new.mp3'),
+      new Audio('./sounds/Piano G new.mp3'),
+      new Audio('./sounds/Piano D new.mp3'),
+      new Audio('./sounds/Piano F new.mp3')
     ];
   }
 
@@ -124,6 +118,7 @@ class Simon {
     this.errorSound.play();
     this.display.startGameBtn.disabled = false;
     this.blockedButtons = true;
+    round.innerHTML = 'GAME OVER 😢'
   }
 
   // Muestra la animacón de triunfo y actualiza el simon cuando el jugador gana
@@ -134,37 +129,10 @@ class Simon {
       element.classList.add('winner');
     });
     this.wonGameSound.play();
-    this.updateRound('🏆');
+    round.innerHTML = 'CONGRATS!! 🏆🥳'
   }
 
 }
 
 const simon = new Simon(simonsBtns, startGameBtn, round);
 simon.init();
-
-
-
-
-
-
-
-
-// startGame.addEventListener('click', () => {
-//   console.log('Game Start')
-// })
-
-// coralBtn.addEventListener('click', () => {
-//   console.log('Coral')
-// })
-
-// blueBtn.addEventListener('click', () => {
-//   console.log('Blue')
-// })
-
-// redBtn.addEventListener('click', () => {
-//   console.log('red')
-// })
-
-// purpleBtn.addEventListener('click', () => {
-//   console.log('Purple')
-// })
