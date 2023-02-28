@@ -12,7 +12,7 @@ class Simon {
   constructor(simonsBtns, startGameBtn, round) {
     this.round = 0;
     this.userPosition = 0;
-    this.totalRounds = 2;
+    this.totalRounds = 5;
     this.sequence = [];
     this.speed = 1000;
     this.blockedButtons = true;
@@ -21,7 +21,8 @@ class Simon {
       startGameBtn,
       round
     }
-    this.errorSoundo = new Audio('./sounds/scary-game-over.mp3');
+    this.wonGameSound = new Audio('./sounds/conrats-clapping.mp3');
+    this.errorSound = new Audio('./sounds/scary-game-over.mp3');
     this.buttonSounds = [
       new Audio('./sounds/Piano A.mp3'),
       new Audio('./sounds/Piano G.mp3'),
@@ -127,12 +128,12 @@ class Simon {
 
   // Muestra la animacón de triunfo y actualiza el simon cuando el jugador gana
   gameWon() {
-    // !===========================
     this.display.startGameBtn.disabled = false;
     this.blockedButtons = true;
     this.buttons.forEach(element => {
       element.classList.add('winner');
     });
+    this.wonGameSound.play();
     this.updateRound('🏆');
   }
 
