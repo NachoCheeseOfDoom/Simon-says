@@ -2,11 +2,19 @@ const startGameBtn = document.getElementById('start-game-btn')
 const round = document.getElementById('rounds-el');
 const simonsBtns = document.getElementsByClassName('circle');
 
+// playAudio();
+// window.onload = function () {
+//   this.beforeStarGame = new Audio('./sounds/halo_theme.mp3');
+//   this.beforeStarGame.play();
+// }
+
+
 class Simon {
   constructor(simonsBtns, startGameBtn, round) {
+
     this.round = 0;
     this.userPosition = 0;
-    this.totalRounds = 5;
+    this.totalRounds = 3;
     this.sequence = [];
     this.speed = 1000;
     this.blockedButtons = true;
@@ -16,6 +24,7 @@ class Simon {
       round
     }
     this.wonGameSound = new Audio('./sounds/conrats-clapping.mp3');
+    this.beforeStarGame = new Audio('./sounds/halo_theme.mp3');
     this.errorSound = new Audio('./sounds/game-over-trumpit.mp3');
     this.buttonSounds = [
       new Audio('./sounds/Piano A new.mp3'),
@@ -27,12 +36,13 @@ class Simon {
 
   // Inicia el Simon
   init() {
-    // this.starSound = new Audio('./sounds/Start-of-this.gameLost.mp3');
     this.display.startGameBtn.onclick = () => this.startGame();
+    this.beforeStarGame.play();
   }
 
   // Comienza el juego
   startGame() {
+    this.beforeStarGame.pause();
     this.display.startGameBtn.disabled = true;
     this.updateRound(0);
     this.userPosition = 0;
@@ -71,7 +81,7 @@ class Simon {
       this.buttonSounds[value].play();
       if (this.round === this.userPosition) {
         this.updateRound(this.round + 1);
-        this.speed /= 1.02;
+        this.speed /= 1;
         this.isGameOver();
       } else {
         this.userPosition++;
@@ -130,6 +140,9 @@ class Simon {
     });
     this.wonGameSound.play();
     round.innerHTML = 'CONGRATS!! 🏆🥳'
+    setTimeout(() => {
+      this.beforeStarGame.play();
+    }, 5000)
   }
 
 }
