@@ -1,13 +1,12 @@
 const startGameBtn = document.getElementById('start-game-btn')
 const round = document.getElementById('rounds-el');
 const simonsBtns = document.getElementsByClassName('circle');
-const intoSound = document.getElementById('intro-sound');
+// const intoSound = document.getElementById('intro-sound');
 
 // playAudio();
-window.onload = function () {
-  this.beforeStarGame = new Audio('./sounds/halo_theme.mp3');
-  this.beforeStarGame.play();
-}
+// window.onload = function () {
+//   intoSound.play();
+// }
 
 
 class Simon {
@@ -15,7 +14,7 @@ class Simon {
 
     this.round = 0;
     this.userPosition = 0;
-    this.totalRounds = 3;
+    this.totalRounds = 5;
     this.sequence = [];
     this.speed = 1000;
     this.blockedButtons = true;
@@ -38,7 +37,8 @@ class Simon {
   // Inicia el Simon
   init() {
     this.display.startGameBtn.onclick = () => this.startGame();
-    // this.beforeStarGame.play();
+    this.beforeStarGame.play();
+
   }
 
   // Comienza el juego
@@ -143,7 +143,7 @@ class Simon {
     round.innerHTML = 'CONGRATS!! 🏆🥳'
     setTimeout(() => {
       this.beforeStarGame.play();
-    }, 5000)
+    }, 6000)
   }
 
 }
