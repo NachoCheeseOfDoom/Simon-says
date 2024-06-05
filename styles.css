@@ -137,15 +137,15 @@ h1 {
 }
 
 .top-div1:active {
-  box-shadow: 0 5px #666, 0px 0px 50px coral;
+  box-shadow: 0 5px #666, 0px 0px 50px rgb(255, 208, 79);
 }
 .top-div2:active {
-  box-shadow: 0 5px #666, 0px 0px 50px #1c87c9;
+  box-shadow: 0 5px #666, 0px 0px 50px #11f01ce4;
 }
 
 .bottom-div1:active {
-  box-shadow: 0 5px #666, 0px 0px 50px red;
+  box-shadow: 0 5px #666, 0px 0px 50px rgb(161, 2, 175);
 }
 .bottom-div2:active {
-  box-shadow: 0 5px #666, 0px 0px 50px purple;
+  box-shadow: 0 5px #666, 0px 0px 50px rgb(0, 128, 124);
 }
